@@ -41,14 +41,14 @@ namespace ariel {
     {
         int size =(int) log10(man) +1;
         if (size < INPUT_SIZE) {
-            throw std::invalid_argument("Too short");
+            throw std::invalid_argument("Too short input (needs to be 8 digits)");
         }
         if (size > INPUT_SIZE){
-            throw std::out_of_range("Too long");
+            throw std::out_of_range("Too long input (needs to be 8 digits)");
         }
         for (int i = 0; i < INPUT_SIZE; i++) {
                 if ((man%NEXT_PART < 1) || (man%NEXT_PART > 4)) {
-                    throw std::out_of_range("Not an option");
+                    throw std::out_of_range("Not an option (only digits between 1 and 4)");
                 }
                 man /= NEXT_PART;
         }
